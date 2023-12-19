@@ -5,7 +5,9 @@
 <p>// 主函式<br/>int main() {<br/> // Start a Gnuplot process using popen<br/> FILE *gnuplotPipe = popen("gnuplot -persistent", "w");<br/> if (!gnuplotPipe) {<br/> fprintf(stderr, "Failed to start Gnuplot.\n");<br/> return 1;<br/> }</p>
 <p>// Use Gnuplot plotting commands, specify font and output as PNG<br/> fprintf(gnuplotPipe, "set terminal png font 'default,10' size 800,400\n");<br/> fprintf(gnuplotPipe, "set output './../images/gnuplot_ex1.png'\n");<br/> fprintf(gnuplotPipe, "plot sin(x)");<br/> // Close popen<br/> pclose(gnuplotPipe);</p>
 <p>return 0;<br/>}</p>
-<p><img alt="" height="200" src="/images/gnuplot_ex1.png" width="400"/></p><h1>Brython</h1>
+<p><img alt="" height="200" src="/images/gnuplot_ex1.png" width="400"/></p>
+<h1>w6</h1>
+<h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
 <p style="padding-left: 30px;"><a href="https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d">https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d</a></p>
