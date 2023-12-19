@@ -148,7 +148,11 @@ img.add_border {
 <p>// Use Gnuplot plotting commands, specify font and output as PNG<br/> fprintf(gnuplotPipe, "set terminal png font 'default,10' size 800,400\n");<br/> fprintf(gnuplotPipe, "set output './../images/gnuplot_ex1.png'\n");<br/> fprintf(gnuplotPipe, "plot sin(x)");<br/> // Close popen<br/> pclose(gnuplotPipe);</p>
 <p>return 0;<br/>}</p>
 <p><img alt="" height="200" src="./../images/gnuplot_ex1.png" width="400"/></p>
-<br />About << <a href='About.html'>Previous</a> <a href='w6.html'>Next</a> >> w6</div>
+<p>執行步驟:</p>
+<p> 1 cd downloads</p>
+<p> 2 cc gnuplot_ex1.c -lgd-lm</p>
+<p> 3 ./a.out</p>
+<p>執行結果圖片位於images</p><br />About << <a href='About.html'>Previous</a> <a href='w6.html'>Next</a> >> w6</div>
         
     <!-- footer -->
       <div class="container">
