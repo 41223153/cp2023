@@ -2,10 +2,18 @@
 <p><a href="https://github.com/mdecycu/cmsite"> https://github.com/mdecycu/cmsite</a></p>
 <h1>w5</h1>
 <p><span style="background-color: #ffff00;">執行步驟:</span></p>
-<p>  1 cd downloads</p>
-<p>  2 cc gnuplot_ex1.c -lgd-lm</p>
-<p>  3 ./a.out</p>
-<p>  執行結果圖片位於images</p>
+<p>   1 cd downloads</p>
+<p>   2 cc gnuplot_ex1.c -lgd -lm</p>
+<p>   3 ./a.out</p>
+<p>   執行結果圖片位於images</p>
+<p>  在replit執行程式繪圖前，須於replit.nix中加入下列gd繪圖程式庫</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">{ pkgs }: {
+    deps = [
+      pkgs.gnuplot
+      pkgs.ncurses.dev
+      pkgs.gd
+    ];
+}</pre>
 <p></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">// 包含標準輸出入程式庫的標頭文件
 
