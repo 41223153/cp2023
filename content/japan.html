@@ -2,7 +2,7 @@
         <head>
         <title>cmsite</title>
         <meta charset="utf-8">
-<meta property="head" content="H2">
+<meta property="head" content="H3">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -131,7 +131,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li class='has-children'><a href='課程作業.html'>課程作業</a><ul class='dropdown'><li><a href='gd繪圖程式.html'>gd繪圖程式</a><li class='has-children'><a href='flag.html'>flag</a><ul class='dropdown'><li><a href='roc.html'>roc</a></li></ul><li><a href='w7.html'>w7</a><li><a href='w13.html'>w13</a><li><a href='w15.html'>w15</a></li></ul><li><a href='Brython.html'>Brython</a></li>
+                     <li><a href='About.html'>About</a><li class='has-children'><a href='課程作業.html'>課程作業</a><ul class='dropdown'><li><a href='gd繪圖程式.html'>gd繪圖程式</a><li class='has-children'><a href='flag.html'>flag</a><ul class='dropdown'><li><a href='roc.html'>roc</a><li><a href='usa.html'>usa</a><li><a href='proc.html'>proc</a><li><a href='uk.html'>uk</a><li><a href='japan.html'>japan</a><li><a href='korea.html'>korea</a></li></ul><li><a href='w13.html'>w13</a><li><a href='w15.html'>w15</a></li></ul><li><a href='Brython.html'>Brython</a></li>
                       </ul>
                 </nav>
               </div>
@@ -142,184 +142,7 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">roc << <a href='roc.html'>Previous</a> <a href='w13.html'>Next</a> >> w13<br /><h1>w7</h1>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
-#include &lt;gd.h&gt;
-#include &lt;math.h&gt;
-
-void draw_star(gdImagePtr img, int x, int y, int size, int color, double rotation_angle);
-void draw_chinese_flag(gdImagePtr img);
-
-int main() {
-int width = 300; // 國旗寬度
-int height = 200; // 國旗高度
-
-gdImagePtr im = gdImageCreateTrueColor(width, height);
-gdImageAlphaBlending(im, 0);
-
-draw_chinese_flag(im);
-
-FILE *outputFile = fopen("./../images/proc_flag.png", "wb");
-if (outputFile == NULL) {
-fprintf(stderr, "打開輸出文件時出錯。\n");
-return 1;
-}
-
-gdImagePngEx(im, outputFile, 9);
-fclose(outputFile);
-gdImageDestroy(im);
-
-return 0;
-}
-
-void draw_star(gdImagePtr img, int x, int y, int size, int color, double rotation_angle) {
-gdPoint points[10];
-
-double outer_radius = size / 2;
-double inner_radius = size / 6;
-double angle = M_PI / 5.0;
-
-for (int i = 0; i &lt; 10; i++) {
-double radius = (i % 2 == 0) ? outer_radius : inner_radius;
-double theta = rotation_angle + i * angle;
-points[i].x = x + radius * cos(theta);
-points[i].y = y + radius * sin(theta);
-}
-
-gdImageFilledPolygon(img, points, 10, color);
-}
-
-void draw_chinese_flag(gdImagePtr img) {
-int width = gdImageSX(img);
-int height = gdImageSY(img);
-int red, yellow;
-
-red = gdImageColorAllocate(img, 255, 0, 0); // 紅色背景
-yellow = gdImageColorAllocate(img, 255, 255, 0); // 黃色星星
-
-gdImageFilledRectangle(img, 0, 0, width, height, red);
-
-int star_size = (int)(0.28 * height);
-int star_x = (int)(0.165 * width);
-int star_y = (int)(0.265 * height);
-
-draw_star(img, star_x, star_y, star_size, yellow, 11.0);
-
-double radius = 0.15 * height;
-double angle = 360 / 7 * M_PI / 179.0;
-double rotation = -M_PI / 7.5;
-int cx = (int)(0.32 * width);
-int cy = (int)(0.27 * height);
-
-for (int i = -1; i &lt; 3; i++) {
-int x = (int)(cx + radius * cos(i * angle + rotation));
-int y = (int)(cy + radius * sin(i * angle + rotation));
-draw_star(img, x, y, 19, yellow, M_PI / 5.0);
-}
-}</pre>
-<p><img alt="" height="200" src="./../images/PROC_flag.png" width="300"/></p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
-#include &lt;gd.h&gt;
-#include &lt;math.h&gt;
-
-void draw_uk_flag(gdImagePtr img);
-void fillTriangle(gdImagePtr img, int x1, int y1, int x2, int y2, int x3, int y3, int color);
-
-int main() {
-int width = 1200;
-int height = width / 2;
-
-gdImagePtr img = gdImageCreateTrueColor(width, height);
-gdImageAlphaBlending(img, 0);
-
-draw_uk_flag(img);
-
-FILE *outputFile = fopen("./../images/uk_flag.png", "wb");
-if (outputFile == NULL) {
-fprintf(stderr, "打開輸出文件時發生錯誤。\n");
-return 1;
-}
-
-gdImagePngEx(img, outputFile, 9);
-fclose(outputFile);
-gdImageDestroy(img);
-
-return 0;
-}
-
-void draw_uk_flag(gdImagePtr img) {
-int width = gdImageSX(img);
-int height = gdImageSY(img);
-
-int red, white, blue;
-red = gdImageColorAllocate(img, 204, 0, 0);
-white = gdImageColorAllocate(img, 255, 255, 255);
-blue = gdImageColorAllocate(img, 0, 0, 153);
-
-gdImageFilledRectangle(img, 0, 0, width, height, blue);
-
-// 繪製斜線
-{
-int line_thickness = 100;
-gdImageSetThickness(img, line_thickness);
-
-// 繪製白色斜線
-int x1 = 0, y1 = 600, x2 = 1200, y2 = 0;
-gdImageLine(img, x1, y1, x2, y2, white);
-
-x1 = 0, y1 = 0, x2 = 1200, y2 = 600;
-gdImageLine(img, x1, y1, x2, y2, white);
-}
-
-// 繪製紅色斜線
-{
-int line_thickness = 33;
-gdImageSetThickness(img, line_thickness);
-
-// 繪製紅色斜線
-int x1 = 566, y1 = 300, x2 = 1166, y2 = 0;
-gdImageLine(img, x1, y1, x2, y2, red);
-
-x1 = 1233, y1 = 600, x2 = 633, y2 = 300;
-gdImageLine(img, x1, y1, x2, y2, red);
-
-x1 = 566, y1 = 300, x2 = -33, y2 = 0;
-gdImageLine(img, x1, y1, x2, y2, red);
-
-x1 = 600, y1 = 316.5, x2 = 0, y2 = 616.5;
-gdImageLine(img, x1, y1, x2, y2, red);
-}
-
-// 繪製白色斜線
-{
-int line_thickness = 33;
-gdImageSetThickness(img, line_thickness);
-
-// 繪製斜線
-int x1 = 0, y1 = 600, x2 = 1200, y2 = 0;
-gdImageLine(img, x1, y1, x2, y2, red);
-
-x1 = 1200, y1 = 16.5, x2 = 600, y2 = 316.5;
-gdImageLine(img, x1, y1, x2, y2, white);
-
-x1 = 0, y1 = 583.5, x2 = 600, y2 = 283.5;
-gdImageLine(img, x1, y1, x2, y2, white);
-}
-
-// 繪製白色十字
-int cross_width = width / 32;
-int cross_arm_width = width / 32;
-int center_x = width / 2;
-int center_y = height / 2;
-
-gdImageFilledRectangle(img, center_x + 2.7 * cross_width, 0, center_x - 2.7 * cross_width, height, white);
-gdImageFilledRectangle(img, 0, center_y + 2.7 * cross_arm_width, width, center_y - 2.7 * cross_arm_width, white);
-
-// 繪製紅色十字
-gdImageFilledRectangle(img, center_x + 1.5 * cross_width, 0, center_x - 1.5 * cross_width, height, red);
-gdImageFilledRectangle(img, 0, center_y + 1.5 * cross_arm_width, width, center_y - 1.5 * cross_arm_width, red);
-}</pre>
-<p><img alt="" height="200" src="./../images/uk_flag.png" width="400"/></p>
+    <div id="tipue_search_content">uk << <a href='uk.html'>Previous</a> <a href='korea.html'>Next</a> >> korea<br /><h1>japan</h1>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
@@ -380,61 +203,7 @@ void draw_red_sun(gdImagePtr img, int x, int y, int size, int color) {
     gdImageFillToBorder(img, x, y, color, color);
 }</pre>
 <p><img alt="" height="267" src="./../images/japan_flag.png" width="400"/></p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;gd.h&gt;
-#include &lt;stdio.h&gt;
-#include &lt;math.h&gt;
-
-int main() {
-    gdImagePtr im;
-    FILE *output;
-    int white, red, blue;
-
-    im = gdImageCreateTrueColor(600, 400);
-    white = gdImageColorAllocate(im, 255, 255, 255);
-
-    // 將紅色和藍色顏色值對調
-    red = gdImageColorAllocate(im, 225, 0, 0);
-    blue = gdImageColorAllocate(im, 0, 0, 225);
-
-    // 填充白色背景
-    gdImageFilledRectangle(im, 0, 0, 599, 399, white);
-
-    // 在中間添加紅藍各一半的圓，將紅色移到上方，藍色移到下方
-    int centerX = 300;
-    int centerY = 200;
-    int radius = 200;
-
-    gdImageFilledArc(im, centerX, centerY, radius, radius, 0, 180, blue, gdPie);
-    gdImageFilledArc(im, centerX, centerY - 1, radius, radius, 180, 360, red, gdPie);
-
-    // 在中間添加向右偏移49的直徑為100的藍色圓
-    int blueCircleRadius = 50; // 半徑為50
-    int offsetX = 49;
-    gdImageFilledEllipse(im, centerX + offsetX, centerY, blueCircleRadius * 2, blueCircleRadius * 2, blue);
-
-    // 在中間添加向左偏移50的直徑為100的紅色圓
-    int redCircleRadius = 50; // 半徑為50
-    gdImageFilledEllipse(im, centerX - 49, centerY, redCircleRadius * 2, redCircleRadius * 2, red);
-
-    // 將中間的圖形順時針旋轉104度
-    double angle = 104.0;
-    gdImagePtr rotated_im = gdImageCreateTrueColor(600, 400);
-    gdImageFilledRectangle(rotated_im, 0, 0, 599, 399, white);
-    gdImageCopyRotated(rotated_im, im, 300, 200, 0, 0, 600, 400, (int)(angle * 10));
-
-    // 其他繪製操作...
-
-    output = fopen("korea_flag.png", "wb");
-    gdImagePng(rotated_im, output);
-    fclose(output);
-
-    gdImageDestroy(im);
-    gdImageDestroy(rotated_im);
-
-    return 0;
-}</pre>
-<p><img alt="" height="267" src="./../images/korea_flag.png" width="400"/></p>
-<br />roc << <a href='roc.html'>Previous</a> <a href='w13.html'>Next</a> >> w13</div>
+<br />uk << <a href='uk.html'>Previous</a> <a href='korea.html'>Next</a> >> korea</div>
         
     <!-- footer -->
       <div class="container">
