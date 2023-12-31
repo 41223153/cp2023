@@ -727,7 +727,34 @@ int main()
     // Indicate successful execution
     return(0); 
 }</pre><h3>2.</h3>
-<h3>3.</h3>
+<ul class="w3r_list">
+<li><span>程式碼使用預處理器指令（#if、#elif、#else 和 #endif）根據編譯器偵測到的 C 標準版本有條件地編譯不同的列印語句：</span></li>
+<ul class="w3r_list">
+<li><span>#if __STDC_VERSION__ &gt;= 201710L 檢查 C 標準版本是否大於或等於 C18 (2017)。如果為真，則會列印「我們正在使用 C18！」。</span></li>
+<li><span>#elif __STDC_VERSION__ &gt;= 201112L 檢查 C 標準版本是否大於或等於 C11 (2011)。如果為 true，則會列印「We are using C11!」。</span></li>
+<li><span>#elif __STDC_VERSION__ &gt;= 199901L 檢查 C 標準版本是否大於或等於 C99 (1999)。如果為 true，則會列印「We are using C99!」。</span></li>
+<li><span>#else 是一個後備條件，如果上述條件均不滿足，則觸發該條件。它列印“我們正在使用 C89/C90！”。</span></li>
+</ul>
+</ul>
+<p><span><img alt="" height="180" src="/images/練習2.png" width="400"/></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main(int argc, char** argv) {
+    // Check for C standard version
+    #if __STDC_VERSION__ &gt;=  201710L
+        printf("We are using C18!\n");
+    #elif __STDC_VERSION__ &gt;= 201112L
+        printf("We are using C11!\n");
+    #elif __STDC_VERSION__ &gt;= 199901L
+        printf("We are using C99!\n");
+    #else
+        printf("We are using C89/C90!\n");
+    #endif
+
+    // Indicate successful execution
+    return 0;
+}</pre>
+<p></p><h3>3.</h3>
 <h3>4.</h3>
 <h3>5.</h3>
 <h3>6.</h3>
