@@ -142,62 +142,35 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">japan << <a href='japan.html'>Previous</a> <a href='w13.html'>Next</a> >> w13<br /><h1>korea</h1>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;gd.h&gt;
-#include &lt;stdio.h&gt;
-#include &lt;math.h&gt;
+    <div id="tipue_search_content">1. << <a href='1..html'>Previous</a> <a href='3..html'>Next</a> >> 3.<br /><h1>2.</h1>
+<ul class="w3r_list">
+<li><span>程式碼使用預處理器指令（#if、#elif、#else 和 #endif）根據編譯器偵測到的 C 標準版本有條件地編譯不同的列印語句：</span></li>
+<ul class="w3r_list">
+<li><span>#if __STDC_VERSION__ &gt;= 201710L 檢查 C 標準版本是否大於或等於 C18 (2017)。如果為真，則會列印「我們正在使用 C18！」。</span></li>
+<li><span>#elif __STDC_VERSION__ &gt;= 201112L 檢查 C 標準版本是否大於或等於 C11 (2011)。如果為 true，則會列印「We are using C11!」。</span></li>
+<li><span>#elif __STDC_VERSION__ &gt;= 199901L 檢查 C 標準版本是否大於或等於 C99 (1999)。如果為 true，則會列印「We are using C99!」。</span></li>
+<li><span>#else 是一個後備條件，如果上述條件均不滿足，則觸發該條件。它列印“我們正在使用 C89/C90！”。</span></li>
+</ul>
+</ul>
+<p><span><img alt="" height="180" src="./../images/練習2.png" width="400"/></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
-int main() {
-    gdImagePtr im;
-    FILE *output;
-    int white, red, blue;
+int main(int argc, char** argv) {
+    // Check for C standard version
+    #if __STDC_VERSION__ &gt;=  201710L
+        printf("We are using C18!\n");
+    #elif __STDC_VERSION__ &gt;= 201112L
+        printf("We are using C11!\n");
+    #elif __STDC_VERSION__ &gt;= 199901L
+        printf("We are using C99!\n");
+    #else
+        printf("We are using C89/C90!\n");
+    #endif
 
-    im = gdImageCreateTrueColor(600, 400);
-    white = gdImageColorAllocate(im, 255, 255, 255);
-
-    // 將紅色和藍色顏色值對調
-    red = gdImageColorAllocate(im, 225, 0, 0);
-    blue = gdImageColorAllocate(im, 0, 0, 225);
-
-    // 填充白色背景
-    gdImageFilledRectangle(im, 0, 0, 599, 399, white);
-
-    // 在中間添加紅藍各一半的圓，將紅色移到上方，藍色移到下方
-    int centerX = 300;
-    int centerY = 200;
-    int radius = 200;
-
-    gdImageFilledArc(im, centerX, centerY, radius, radius, 0, 180, blue, gdPie);
-    gdImageFilledArc(im, centerX, centerY - 1, radius, radius, 180, 360, red, gdPie);
-
-    // 在中間添加向右偏移49的直徑為100的藍色圓
-    int blueCircleRadius = 50; // 半徑為50
-    int offsetX = 49;
-    gdImageFilledEllipse(im, centerX + offsetX, centerY, blueCircleRadius * 2, blueCircleRadius * 2, blue);
-
-    // 在中間添加向左偏移50的直徑為100的紅色圓
-    int redCircleRadius = 50; // 半徑為50
-    gdImageFilledEllipse(im, centerX - 49, centerY, redCircleRadius * 2, redCircleRadius * 2, red);
-
-    // 將中間的圖形順時針旋轉104度
-    double angle = 104.0;
-    gdImagePtr rotated_im = gdImageCreateTrueColor(600, 400);
-    gdImageFilledRectangle(rotated_im, 0, 0, 599, 399, white);
-    gdImageCopyRotated(rotated_im, im, 300, 200, 0, 0, 600, 400, (int)(angle * 10));
-
-    // 其他繪製操作...
-
-    output = fopen("korea_flag.png", "wb");
-    gdImagePng(rotated_im, output);
-    fclose(output);
-
-    gdImageDestroy(im);
-    gdImageDestroy(rotated_im);
-
+    // Indicate successful execution
     return 0;
 }</pre>
-<p><img alt="" height="267" src="./../images/korea_flag.png" width="400"/></p>
-<br />japan << <a href='japan.html'>Previous</a> <a href='w13.html'>Next</a> >> w13</div>
+<p></p><br />1. << <a href='1..html'>Previous</a> <a href='3..html'>Next</a> >> 3.</div>
         
     <!-- footer -->
       <div class="container">
