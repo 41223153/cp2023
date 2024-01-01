@@ -143,7 +143,55 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">7. << <a href='7..html'>Previous</a> <a href='9..html'>Next</a> >> 9.<br /><h1>8.</h1>
-<br />7. << <a href='7..html'>Previous</a> <a href='9..html'>Next</a> >> 9.</div>
+<p><span>在下面的練習中 -</span></p>
+<ul class="w3r_list">
+<li><span><span>程式包括標準輸入/輸出庫&lt;stdio.h&gt;。</span></span></li>
+<li><span><span>它聲明了三個整數變數：</span></span></li>
+<ul class="w3r_list">
+<li><span><span>int days：此變數儲存要轉換的總天數。</span></span></li>
+<li><span><span>intyear：儲存計算出的年數。</span></span></li>
+<li><span><span>int week：儲存計算出的周數。</span></span></li>
+</ul>
+<li><span><span>程式用 1329 初始化“days”變數。</span></span></li>
+<li><span><span>然後它會轉換：</span></span></li>
+<ul class="w3r_list">
+<li><span><span>年=天/365：此除法計算給定天數中的年數。</span><span>由於一年大約有 365 天，因此這種劃分給出了年數的估計。</span></span></li>
+<li><span><span>週 = (天 % 365) / 7：計算出年份後，程式使用模運算子 % 來找出無法用完整年份表示的剩餘天數。</span><span>然後將該餘數除以 7 來計算週數。</span></span></li>
+<li><span><span>最後，減去年和周所佔的天數即可得到剩餘的天數。</span></span></li>
+</ul>
+<li><span><span>程式使用 printf 語句來顯示計算值：</span></span></li>
+<ul class="w3r_list">
+<li><span><span>它會列印年數並顯示以下訊息：“年：[年]。”</span></span></li>
+<li><span><span>它會列印週數並顯示以下訊息：“週：[週]。”</span></span></li>
+<li><span><span>它會列印剩餘天數並顯示以下訊息：“天數：[天]。”</span></span></li>
+</ul>
+<li><span><span>程式返回0表示執行成功。</span></span></li>
+</ul>
+<p><span><span><img alt="" height="363" src="./../images/練習8.png" width="400"/></span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+    int days, years, weeks;
+
+    days = 1329; // 將days設為1329
+
+    // 將總天數除以 365，得到年份。
+    years = days/365; 
+    // 用取餘數運算符 % 獲得總天數除以 365 的餘數，然後除以 7 得到周數。
+    weeks = (days % 365)/7; 
+    // 使用已經計算出來的年份和周數，將總天數中對應的年份天數和周數天數相減，獲得剩餘的天數。
+    days = days - ((years*365) + (weeks*7)); 
+  
+
+    // 分別印出計算出來的年份、周數和剩餘的天數。
+    printf("Years: %d\n", years);
+    printf("Weeks: %d\n", weeks);
+    printf("Days: %d \n", days);
+
+    return 0;
+}</pre>
+<p></p><br />7. << <a href='7..html'>Previous</a> <a href='9..html'>Next</a> >> 9.</div>
         
     <!-- footer -->
       <div class="container">
