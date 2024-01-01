@@ -989,8 +989,28 @@ int main()
 
     return 0;
 }</pre>
-<p></p><h3>9.</h3>
-<h3>10.</h3>
+<p></p><h3>60.</h3>
+<p><span>編寫一個 C 程式來建立 7 天的枚舉資料類型，並以整數常數顯示它們的值。</span></p>
+<p><span><img alt="" height="354" src="/images/練習60.png" width="400"/></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main() {
+    // 這裡使用 enum 關鍵字定義了一個新的資料類型 week
+    // 在 C 語言的列舉中，每個名稱會被賦予數字值從0開始，
+    enum week {Sun, Mon, Tue, Wed, Thu, Fri, Sat};
+
+    // 使用 printf 函式印出了 week 列舉型別中各個常數的值。
+    // 每個列舉常數名稱都被轉換為其對應的整數值，並使用 %d 占位符進行輸出。
+    printf("Sun = %d", Sun);
+    printf("\nMon = %d", Mon);
+    printf("\nTue = %d", Tue);
+    printf("\nWed = %d", Wed);
+    printf("\nThu = %d", Thu);
+    printf("\nFri = %d", Fri);
+    printf("\nSat = %d", Sat);
+
+    return 0;
+}</pre>
+<p></p><h3>10.</h3>
 <h1>課程資源</h1>
 <p>   倉儲 <a href="https://github.com">github.com</a></p>
 <p>   維護網站 <a href="https://replit.com/">replit.com</a> </p>
