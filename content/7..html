@@ -143,7 +143,35 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">6. << <a href='6..html'>Previous</a> <a href='8..html'>Next</a> >> 8.<br /><h1>7.</h1>
-<br />6. << <a href='6..html'>Previous</a> <a href='8..html'>Next</a> >> 8.</div>
+<p><span>寫一個 C 程式來顯示以下變數。</span><br/><span><span>a+ c, x + c,dx + x, ((int) dx) + ax, a + x, s + b, ax + b, s + c, ax + c, ax + ux</span></span><br/><em><span><span>變數宣告</span></span></em><span><span>：</span></span><br/><span><span>int a = 125 ，b = 12345；</span></span><br/><span><span>長斧=1234567890；</span></span><br/><span><span>短 s = 4043；</span></span><br/><span><span>浮動x = 2.13459；</span></span><br/><span><span>雙 dx = 1.1415927；</span></span><br/><span><span>字符c = 'W';</span></span><br/><span><span>無符號長 ux = 2541567890；</span></span></p>
+<p><span><span><img alt="" height="444" src="./../images/練習7.png" width="400"/></span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a = 125, b = 12345;        // a 被賦值為 125。b 被賦值為 12345。
+    long ax = 1234567890;          // 將型別為 long ax 的變數，初始化為 1234567890。
+    short s = 4043;                // 將型別為 short s的變數，初始化為 4043。
+    float x = 2.13459;             // 將型別為 float x 的變數，初始化為 2.13459。
+    double dx = 1.1415927;         // 將型別為 doule dx 的變數，初始化為 1.1415927。
+    char c = 'W';                  // 將型別為 char c 的變數，初始化為 W。
+    unsigned long ux = 2541567890; // 將型別為 unsigned long ux 的變數，初始化為 2541567890。
+
+    // 各種算術運算和類型轉換
+    printf("a + c =  %d\n", a + c);
+    printf("x + c = %f\n", x + c);
+    printf("dx + x = %f\n", dx + x);
+    printf("((int) dx) + ax =  %ld\n", ((int) dx) + ax);
+    printf("a + x = %f\n", a + x);
+    printf("s + b =  %d\n", s + b);
+    printf("ax + b = %ld\n", ax + b);
+    printf("s + c =  %hd\n", s + c);
+    printf("ax + c = %ld\n", ax + c);
+    printf("ax + ux = %lu\n", ax + ux);
+
+    return 0;
+}</pre>
+<p><span><span></span></span></p><br />6. << <a href='6..html'>Previous</a> <a href='8..html'>Next</a> >> 8.</div>
         
     <!-- footer -->
       <div class="container">
