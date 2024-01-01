@@ -785,7 +785,32 @@ int main()
     return(0);
 }</pre>
 <p></p><h3>4.</h3>
-<h3>5.</h3>
+<p><span>#include &lt;stdio.h&gt; - 此程式碼包含標準輸入/輸出庫 &lt;stdio.h&gt;。</span></p>
+<ul class="w3r_list">
+<li><span><span>在“main()”函數中，它聲明了三個字元變數：“char1”、“char2”和“char3”，並分別為它們賦值“X”、“M”和“L”。</span></span></li>
+<li><span><span>它使用“printf()”函數來顯示格式化訊息。</span><span>該訊息包含由 %c 指定的佔位符，它們代表字元。</span></span></li>
+<li><span><span>在「printf()」函數內部，它提供了替代佔位符的值。</span><span>在本例中，它提供了“char1”、“char2”和“char3”，後面跟著它們的相反順序：“char3”、“char2”和“char1”。</span></span></li>
+<li><span><span>程式將會列印：“XML 的反向是 LMX”，因為它以相反的順序交換字元。</span></span></li>
+<li><span><span>最後main函數傳回0表示程式執行成功。</span></span></li>
+</ul>
+<p><span><span><img alt="" height="201" src="/images/練習4.png" width="400"/></span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main() 
+{
+    // Declare and initialize character variables
+    char char1 = 'X';
+    char char2 = 'M';
+    char char3 = 'L';
+
+    // Print the original and reversed characters
+    printf("The reverse of %c%c%c is %c%c%c\n",
+        char1, char2, char3,
+        char3, char2, char1);
+
+    return(0);
+}</pre>
+<p></p><h3>5.</h3>
 <h3>6.</h3>
 <h3>7.</h3>
 <h3>8.</h3>
