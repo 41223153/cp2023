@@ -715,18 +715,18 @@ int main() {
 
 int main()  
 {
-    // Print Name
-    printf("Name   : 龔威仁\n"); //使用 printf 函式來印出姓名 "龔威仁
+    //使用 printf 函式來印出姓名 "龔威仁
+    printf("Name   : 龔威仁\n"); 
 
-    // Print Date of Birth
-    printf("DOB    : Feb 11, 2005\n"); //使用 printf 函式印出了出生日期 "Feb 11, 2005"
+    //使用 printf 函式印出了出生日期 "Feb 11, 2005"
+    printf("DOB    : Feb 11, 2005\n"); 
 
-    // Print Mobile Number
-    printf("Mobile : 0908-780211\n"); //使用 printf 函式印出了手機號碼 "0908-780211"
+    //使用 printf 函式印出了手機號碼 "0908-780211"
+    printf("Mobile : 0908-780211\n"); 
 
-    // Indicate successful execution
     return(0); 
 }</pre>
+<p></p>
 <p></p><h3>2.</h3>
 <ul class="w3r_list">
 <li><span>程式碼使用預處理器指令（#if、#elif、#else 和 #endif）根據編譯器偵測到的 C 標準版本有條件地編譯不同的列印語句：</span></li>
@@ -741,7 +741,7 @@ int main()
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
 int main(int argc, char** argv) {
-    // Check for C standard version
+    // 檢查 C 標準版本
     #if __STDC_VERSION__ &gt;=  201710L
         printf("We are using C18!\n");
     #elif __STDC_VERSION__ &gt;= 201112L
@@ -751,9 +751,11 @@ int main(int argc, char** argv) {
     #else
         printf("We are using C89/C90!\n");
     #endif
-  //這段程式碼是用來檢查所使用的C語言標準版本。__STDC_VERSION__ 是一個預定義的（macro），代表了目前編譯器所支援的C語言標準版本。程式會依照目前使用的標準版本來印出相應的訊息。例如，如果編譯器支援的標準版本為 C18，則會印出 "We are using C18!"，以此類推。
+   //這段程式碼是用來檢查所使用的C語言標準版本。
+   //__STDC_VERSION__ 是一個預定義的（macro），代表了目前編譯器所支援的C語言標準版本。
+   //程式會依照目前使用的標準版本來印出相應的訊息。
+   //例如，如果編譯器支援的標準版本為 C18，則會印出 "We are using C18!"，以此類推。
 
-    // Indicate successful execution
     return 0;
 }</pre>
 <p></p><h3>3.</h3>
@@ -763,26 +765,20 @@ int main(int argc, char** argv) {
 
 int main() 
 {
-    // 這行程式碼使用 printf 函式來印出一行包含六個 # 字元的井字形狀
-    printf("######\n"); 
+    // 宣告並初始化了三個字符變數 char1、char2、char3。
+    // 分別賦值為 'X'、'M'、'L'，它們分別代表英文字母 X、M 和 L。
+    char char1 = 'X';
+    char char2 = 'M';
+    char char3 = 'L';
 
-    // 這行程式碼各自使用 printf 函式來印出單個 # 字元
-    printf("#\n");
-
-    // 這行程式碼各自使用 printf 函式來印出單個 # 字元
-    printf("#\n");
-
-    // 這行程式碼使用 printf 函式來印出一行包含五個 # 字元的井字形狀 
-    printf("#####\n");
-
-    // 這行程式碼各自使用 printf 函式來印出單個 # 字元
-    printf("#\n");
-
-    // 這行程式碼各自使用 printf 函式來印出單個 # 字元
-    printf("#\n");
-
-    // 這行程式碼使用 printf 函式來印出一行包含六個 # 字元的井字形狀 
-    printf("######\n");
+    // 格式化字串中包含了兩組 %c，每組 %c 用來表示一個字符。
+    // 會先印出 char1、char2、char3 這三個字符。
+    // 接著印出 char3、char2、char1 這三個字符。
+    // 這樣做的結果就是在同一行中先印出 X, M, L，然後接著印出 L, M, X。
+    
+    printf("The reverse of %c%c%c is %c%c%c\n",
+        char1, char2, char3,
+        char3, char2, char1);
 
     return(0);
 }</pre>
@@ -800,12 +796,13 @@ int main()
 
 int main() 
 {
-    // Declare and initialize character variables
+    // 宣告並初始化了三個字符變數 char1、char2、char3，分別賦值為 'X'、'M'、'L'，它們分別代表英文字母 X、M     和 L。
     char char1 = 'X';
     char char2 = 'M';
     char char3 = 'L';
 
-    // Print the original and reversed characters
+    // 格式化字串中包含了兩組 %c，每組 %c 用來表示一個字符。
+    // 會先印出 char1、char2、char3 這三個字符，接著印出 char3、char2、char1 這三個字符。這樣做的結果就是     在同一行中先印出 X, M, L，然後接著印出 L, M, X。
     printf("The reverse of %c%c%c is %c%c%c\n",
         char1, char2, char3,
         char3, char2, char1);
