@@ -810,8 +810,108 @@ int main()
     return(0);
 }</pre>
 <p></p><h3>5.</h3>
-<h3>6.</h3>
-<h3>7.</h3>
+<p><span>在下面的練習中 -</span></p>
+<ul class="w3r_list">
+<li><span><span>程式包括標準輸入/輸出庫&lt;stdio.h&gt;。</span></span></li>
+<li><span><span>它聲明了幾個整數變數：</span></span></li>
+<ul class="w3r_list">
+<li><span><span>width：表示矩形寬度（以英吋為單位）。</span></span></li>
+<li><span><span>height：表示矩形的高度（以英吋為單位）。</span></span></li>
+<li><span><span>面積：將儲存計算出的矩形面積。</span></span></li>
+<li><span><span>週長：將儲存計算出的矩形週長。</span></span></li>
+</ul>
+<li><span><span>在“main()”函數中：</span></span></li>
+<ul class="w3r_list">
+<li><span><span>它將值 7 分配給“height”變量，將值 5 分配給“width”變量，代表矩形的尺寸。</span></span></li>
+</ul>
+<li><span><span>然後程式計算矩形的周長和麵積：</span></span></li>
+<ul class="w3r_list">
+<li><span><span>週長：它使用公式 2 *（高度 + 寬度）來計算矩形的周長，並將結果儲存在「perimeter」變數中。</span></span></li>
+<li><span><span>面積：它使用公式“高度 * 寬度”計算面積，並將結果儲存在“area”變數中。</span></span></li>
+</ul>
+<li><span><span>最後，程式使用“printf()”函數顯示計算值：</span></span></li>
+<ul class="w3r_list">
+<li><span><span>它會列印計算出的周長並顯示一條訊息：“矩形的周長 = [週長] 英吋。”</span></span></li>
+<li><span><span>它會列印計算出的面積並顯示一條訊息：“矩形面積 = [面積] 平方英吋。”</span></span></li>
+</ul>
+</ul>
+<p><span><span><img alt="" height="225" src="/images/練習5.png" width="400"/></span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt; 
+
+// 宣告兩個整數變數 width 和 height 來分別儲存矩形的寬和高。
+int width;          
+int height;         
+
+// 宣告兩個整數變數 area 和 perimeter 用來儲存計算後的矩形面積和周長。
+int area;           
+int perimeter;      
+
+int main() {
+   // 將 height 賦值為 7
+   // 將 width 賦值為 5
+  height = 7;
+  width = 5;
+
+    // 使用矩形周長的公式：2 * (height + width)。然後使用 printf 函式印出矩形的周長到終端上。
+    perimeter = 2*(height + width);
+  printf("Perimeter of the rectangle = %d inches\n", perimeter);
+
+    // 計算並儲存了矩形的面積，使用矩形面積的公式：height * width。
+    // 然後使用 printf 函式印出矩形的面積到終端上。
+  area = height * width;
+  printf("Area of the rectangle = %d square inches\n", area);
+
+    return(0);
+}</pre>
+<p><span><span></span></span></p><h3>6.</h3>
+<p><span>在上面的練習中 -</span></p>
+<ul class="w3r_list">
+<li><span><span>程式包括標準輸入/輸出庫&lt;stdio.h&gt;。</span></span></li>
+<li><span><span>它聲明了幾個變數：</span></span></li>
+<ul class="w3r_list">
+<li><span><span>int radius：表示圓半徑。</span></span></li>
+<li><span><span>浮動面積和浮動週長：將儲存計算出的圓的面積和周長。</span></span></li>
+</ul>
+<li><span><span>在“main()”函數中：</span></span></li>
+<ul class="w3r_list">
+<li><span><span>它將值 6 分配給“radius”變量，表示圓的半徑。</span></span></li>
+</ul>
+<li><span><span>然後程式計算圓的周長和麵積：</span></span></li>
+<ul class="w3r_list">
+<li><span><span>週長：它使用公式 2*3.14* 半徑來計算圓的周長，並將結果儲存在「週長」變數中。</span><span>這裡，3.14 是數學常數 π (pi) 的近似值。</span></span></li>
+<li><span><span>面積：使用公式 3.14*radius*radius (π * r^2) 計算面積，並將結果儲存於「area」變數中。</span></span></li>
+</ul>
+<li><span><span>最後，程式使用“printf()”函數顯示計算值：</span></span></li>
+<ul class="w3r_list">
+<li><span><span>它會列印計算出的周長並顯示一條訊息：「圓的周長 = [週長] 英吋」。</span></span></li>
+<li><span><span>它會列印計算出的面積並顯示一條訊息：圓的面積 = [面積] 平方英吋。</span></span></li>
+</ul>
+</ul>
+<p><span><span><img alt="" height="186" src="/images/練習6.png" width="400"/></span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main() {
+   // radius 是整數型別，用來儲存圓的半徑
+   int radius;      
+   // area 和 perimeter 是浮點數型別，用來儲存計算後的圓的面積和周長。
+   float area, perimeter;    
+   // 將半徑 radius 的值設置為 6。
+   radius = 6;     
+
+   // 計算並儲存了圓的周長，使用圓周長的公式：2 * π * radius
+   // π 大約等於 3.14
+   // 使用 printf 函式印出圓的周長到終端上。
+   perimeter = 2 * 3.14 * radius;
+   printf("Perimeter of the Circle = %f inches\n", perimeter);
+
+   // 使用圓面積的公式：π * radius * radius。
+   // 同樣地使用了3.14作為圓周率的近似值。
+   area = 3.14 * radius * radius;
+   printf("Area of the Circle = %f square inches\n", area);
+
+   return(0);
+}</pre>
+<p></p><h3>7.</h3>
 <h3>8.</h3>
 <h3>9.</h3>
 <h3>10.</h3>
